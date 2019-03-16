@@ -1,0 +1,100 @@
+2019-03-16 23:33:47,957 ERROR: Exception on /search [GET] [in /Users/justinemarkposadas/PycharmProjects/blog_w_flask/venv/lib/python3.7/site-packages/flask/app.py:1761]
+Traceback (most recent call last):
+  File "/Users/justinemarkposadas/PycharmProjects/blog_w_flask/venv/lib/python3.7/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/justinemarkposadas/PycharmProjects/blog_w_flask/venv/lib/python3.7/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/justinemarkposadas/PycharmProjects/blog_w_flask/venv/lib/python3.7/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/justinemarkposadas/PycharmProjects/blog_w_flask/venv/lib/python3.7/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/Users/justinemarkposadas/PycharmProjects/blog_w_flask/venv/lib/python3.7/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/justinemarkposadas/PycharmProjects/blog_w_flask/venv/lib/python3.7/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/justinemarkposadas/PycharmProjects/blog_w_flask/venv/lib/python3.7/site-packages/flask_login/utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "/Users/justinemarkposadas/PycharmProjects/blog_w_flask/app/main/routes.py", line 144, in search
+    current_app.config['POSTS_PER_PAGE'])
+  File "/Users/justinemarkposadas/PycharmProjects/blog_w_flask/app/models.py", line 15, in search
+    ids, total = query_index(cls.__tablename__, expression, page, per_page)
+  File "/Users/justinemarkposadas/PycharmProjects/blog_w_flask/app/search.py", line 26, in query_index
+    'from': (page - 1) * per_page, 'size': per_page})
+  File "/Users/justinemarkposadas/PycharmProjects/blog_w_flask/venv/lib/python3.7/site-packages/elasticsearch/client/utils.py", line 76, in _wrapped
+    return func(*args, params=params, **kwargs)
+  File "/Users/justinemarkposadas/PycharmProjects/blog_w_flask/venv/lib/python3.7/site-packages/elasticsearch/client/__init__.py", line 660, in search
+    doc_type, '_search'), params=params, body=body)
+  File "/Users/justinemarkposadas/PycharmProjects/blog_w_flask/venv/lib/python3.7/site-packages/elasticsearch/transport.py", line 318, in perform_request
+    status, headers_response, data = connection.perform_request(method, url, params, body, headers=headers, ignore=ignore, timeout=timeout)
+  File "/Users/justinemarkposadas/PycharmProjects/blog_w_flask/venv/lib/python3.7/site-packages/elasticsearch/connection/http_urllib3.py", line 186, in perform_request
+    self._raise_error(response.status, raw_data)
+  File "/Users/justinemarkposadas/PycharmProjects/blog_w_flask/venv/lib/python3.7/site-packages/elasticsearch/connection/base.py", line 125, in _raise_error
+    raise HTTP_EXCEPTIONS.get(status_code, TransportError)(status_code, error_message, additional_info)
+elasticsearch.exceptions.NotFoundError: NotFoundError(404, 'index_not_found_exception', 'no such index')
+2019-03-16 23:33:51,211 ERROR: Exception on /search [GET] [in /Users/justinemarkposadas/PycharmProjects/blog_w_flask/venv/lib/python3.7/site-packages/flask/app.py:1761]
+Traceback (most recent call last):
+  File "/Users/justinemarkposadas/PycharmProjects/blog_w_flask/venv/lib/python3.7/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/justinemarkposadas/PycharmProjects/blog_w_flask/venv/lib/python3.7/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/justinemarkposadas/PycharmProjects/blog_w_flask/venv/lib/python3.7/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/justinemarkposadas/PycharmProjects/blog_w_flask/venv/lib/python3.7/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/Users/justinemarkposadas/PycharmProjects/blog_w_flask/venv/lib/python3.7/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/justinemarkposadas/PycharmProjects/blog_w_flask/venv/lib/python3.7/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/justinemarkposadas/PycharmProjects/blog_w_flask/venv/lib/python3.7/site-packages/flask_login/utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "/Users/justinemarkposadas/PycharmProjects/blog_w_flask/app/main/routes.py", line 144, in search
+    current_app.config['POSTS_PER_PAGE'])
+  File "/Users/justinemarkposadas/PycharmProjects/blog_w_flask/app/models.py", line 15, in search
+    ids, total = query_index(cls.__tablename__, expression, page, per_page)
+  File "/Users/justinemarkposadas/PycharmProjects/blog_w_flask/app/search.py", line 26, in query_index
+    'from': (page - 1) * per_page, 'size': per_page})
+  File "/Users/justinemarkposadas/PycharmProjects/blog_w_flask/venv/lib/python3.7/site-packages/elasticsearch/client/utils.py", line 76, in _wrapped
+    return func(*args, params=params, **kwargs)
+  File "/Users/justinemarkposadas/PycharmProjects/blog_w_flask/venv/lib/python3.7/site-packages/elasticsearch/client/__init__.py", line 660, in search
+    doc_type, '_search'), params=params, body=body)
+  File "/Users/justinemarkposadas/PycharmProjects/blog_w_flask/venv/lib/python3.7/site-packages/elasticsearch/transport.py", line 318, in perform_request
+    status, headers_response, data = connection.perform_request(method, url, params, body, headers=headers, ignore=ignore, timeout=timeout)
+  File "/Users/justinemarkposadas/PycharmProjects/blog_w_flask/venv/lib/python3.7/site-packages/elasticsearch/connection/http_urllib3.py", line 186, in perform_request
+    self._raise_error(response.status, raw_data)
+  File "/Users/justinemarkposadas/PycharmProjects/blog_w_flask/venv/lib/python3.7/site-packages/elasticsearch/connection/base.py", line 125, in _raise_error
+    raise HTTP_EXCEPTIONS.get(status_code, TransportError)(status_code, error_message, additional_info)
+elasticsearch.exceptions.NotFoundError: NotFoundError(404, 'index_not_found_exception', 'no such index')
+2019-03-16 23:53:08,950 INFO: Microblog startup [in /Users/justinemarkposadas/PycharmProjects/blog_w_flask/app/__init__.py:77]
+2019-03-16 23:54:05,212 ERROR: Exception on /search [GET] [in /Users/justinemarkposadas/PycharmProjects/blog_w_flask/venv/lib/python3.7/site-packages/flask/app.py:1761]
+Traceback (most recent call last):
+  File "/Users/justinemarkposadas/PycharmProjects/blog_w_flask/venv/lib/python3.7/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/justinemarkposadas/PycharmProjects/blog_w_flask/venv/lib/python3.7/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/justinemarkposadas/PycharmProjects/blog_w_flask/venv/lib/python3.7/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/justinemarkposadas/PycharmProjects/blog_w_flask/venv/lib/python3.7/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/Users/justinemarkposadas/PycharmProjects/blog_w_flask/venv/lib/python3.7/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/justinemarkposadas/PycharmProjects/blog_w_flask/venv/lib/python3.7/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/justinemarkposadas/PycharmProjects/blog_w_flask/venv/lib/python3.7/site-packages/flask_login/utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "/Users/justinemarkposadas/PycharmProjects/blog_w_flask/app/main/routes.py", line 144, in search
+    current_app.config['POSTS_PER_PAGE'])
+  File "/Users/justinemarkposadas/PycharmProjects/blog_w_flask/app/models.py", line 15, in search
+    ids, total = query_index(cls.__tablename__, expression, page, per_page)
+  File "/Users/justinemarkposadas/PycharmProjects/blog_w_flask/app/search.py", line 26, in query_index
+    'from': (page - 1) * per_page, 'size': per_page})
+  File "/Users/justinemarkposadas/PycharmProjects/blog_w_flask/venv/lib/python3.7/site-packages/elasticsearch/client/utils.py", line 76, in _wrapped
+    return func(*args, params=params, **kwargs)
+  File "/Users/justinemarkposadas/PycharmProjects/blog_w_flask/venv/lib/python3.7/site-packages/elasticsearch/client/__init__.py", line 660, in search
+    doc_type, '_search'), params=params, body=body)
+  File "/Users/justinemarkposadas/PycharmProjects/blog_w_flask/venv/lib/python3.7/site-packages/elasticsearch/transport.py", line 318, in perform_request
+    status, headers_response, data = connection.perform_request(method, url, params, body, headers=headers, ignore=ignore, timeout=timeout)
+  File "/Users/justinemarkposadas/PycharmProjects/blog_w_flask/venv/lib/python3.7/site-packages/elasticsearch/connection/http_urllib3.py", line 186, in perform_request
+    self._raise_error(response.status, raw_data)
+  File "/Users/justinemarkposadas/PycharmProjects/blog_w_flask/venv/lib/python3.7/site-packages/elasticsearch/connection/base.py", line 125, in _raise_error
+    raise HTTP_EXCEPTIONS.get(status_code, TransportError)(status_code, error_message, additional_info)
+elasticsearch.exceptions.NotFoundError: NotFoundError(404, 'index_not_found_exception', 'no such index')
